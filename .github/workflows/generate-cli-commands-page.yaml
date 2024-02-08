@@ -18,10 +18,10 @@ jobs:
     #if: github.event.label.name == 'build-fork' || contains(github.event.pull_request.labels.*.name, 'build-fork')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          token: ${{ secrets.WORKFLOW_TOKEN }}
+#      - uses: actions/checkout@v3
+#        with:
+#          ref: ${{ github.event.pull_request.head.sha }}
+#          token: ${{ secrets.WORKFLOW_TOKEN }}
 
       # Set up workflow environment to use the Platform.sh CLI
       - name: Set up Platform.sh CLI
@@ -29,7 +29,7 @@ jobs:
 
       # Generate CLI command doc pages
       - env:
-          PLATFORMSH_CLI_TOKEN: ${{ secrets.PLATFORMSH_CLI_TOKEN }}
+          PLATFORMSH_CLI_TOKEN: 5QBxYXD32M8dvSlICymsY82wsiPU-5gc_R09mYj0FZI
           # @see activate_environment:Set environment title:env in manage-environment.yaml
           PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
