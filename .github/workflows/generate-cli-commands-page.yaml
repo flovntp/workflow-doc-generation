@@ -2,7 +2,8 @@ name: Generate CLI commands doc page
 
 on:
   pull_request:
-    types: [assigned, opened, synchronize, reopened]
+    types:
+      - opened
 
 env:
   PLATFORMSH_CLI_NO_INTERACTION: 1
@@ -14,14 +15,9 @@ env:
 
 jobs:
   build:
-    #if: github.event.label.name == 'build-fork' || contains(github.event.pull_request.labels.*.name, 'build-fork')
-    #runs-on: ubuntu-latest
+    if: github.event.pull_request.opened == true
+    runs-on: ubuntu-latest
     steps:
-#      - uses: actions/checkout@v3
-#        with:
-#          ref: ${{ github.event.pull_request.head.sha }}
-#          token: ${{ secrets.WORKFLOW_TOKEN }}
-
       # Set up workflow environment to use the Platform.sh CLI
       - name: Set up Platform.sh CLI
         uses: ./.github/actions/set-up-cli
