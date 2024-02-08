@@ -8,7 +8,7 @@ env:
   PLATFORMSH_CLI_DEFAULT_TIMEOUT: 60 # Increase timeout for CLI commands
   SLEEP_TIME: 5
   NUM_TRIES: 30
-  BRANCH_TITLE: test-${{ github.event.number }}
+  BRANCH_TITLE: test-workflow
 
 jobs:
   build:
