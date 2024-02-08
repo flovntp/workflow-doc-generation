@@ -14,6 +14,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       # Set up workflow environment to use the Platform.sh CLI
       - name: Set up Platform.sh CLI
         uses: ./.github/actions/set-up-cli
