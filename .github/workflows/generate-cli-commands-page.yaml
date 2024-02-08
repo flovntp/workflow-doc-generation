@@ -1,9 +1,6 @@
 name: Generate CLI commands doc page
 
-on:
-  pull_request:
-    types:
-      - opened
+on: [pull_request]
 
 env:
   PLATFORMSH_CLI_NO_INTERACTION: 1
@@ -15,7 +12,6 @@ env:
 
 jobs:
   build:
-    if: github.event.pull_request.opened == true
     runs-on: ubuntu-latest
     steps:
       - run: |
