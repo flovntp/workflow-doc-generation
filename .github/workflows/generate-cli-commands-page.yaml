@@ -33,11 +33,11 @@ jobs:
           git checkout ${{ github.event.pull_request.head.sha }}
 
           # Put most recent changes on the branch
-          echo "Switching to branch ${{ env.BRANCH_TITLE }}"
-          git switch -C ${{ env.BRANCH_TITLE }}
+          #echo "Switching to branch ${{ env.BRANCH_TITLE }}"
+          #git switch -C ${{ env.BRANCH_TITLE }}
 
           echo "Pushing most recent changes"
-          git push --force origin ${{ env.BRANCH_TITLE }}
+          #git push --force origin ${{ env.BRANCH_TITLE }}
 
           platform list --format=md > platform-commands.html
           git add platform-commands.html
