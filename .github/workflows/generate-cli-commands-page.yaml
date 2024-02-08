@@ -3,7 +3,7 @@ name: Generate CLI commands doc page
 on:
   pull_request_target:
     branches: [main]
-    types: [labeled,opened,unlabeled,synchronize]
+    types: [assigned, opened, synchronize, reopened]
 
 env:
   PLATFORMSH_CLI_NO_INTERACTION: 1
@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-    if: github.event.label.name == 'build-fork' || contains(github.event.pull_request.labels.*.name, 'build-fork')
+    #if: github.event.label.name == 'build-fork' || contains(github.event.pull_request.labels.*.name, 'build-fork')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
