@@ -94,9 +94,9 @@ jobs:
 
           # Adding CLI Commands specific page
           echo "Generating Platform.sh CLI doc page"
-          ./shared/scripts/gen-cli-docs.sh
+          ./shared/scripts/gen-cli-docs.sh ${{ env.PLATFORMSH_CLI_DOC_PATH }}
           echo "Generating Upsun CLI doc page"
-          ./shared/scripts/gen-cli-docs-upsun.sh
+          ./shared/scripts/gen-cli-docs-upsun.sh ${{ env.UPSUN_CLI_DOC_PATH }}
 
 #          git add ${{ env.PLATFORMSH_CLI_DOC_PATH }}
 #          git commit -m "generating Platform CLI command doc page"
