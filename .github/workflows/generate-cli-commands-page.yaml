@@ -77,7 +77,7 @@ jobs:
 #          #gh pr view ${{ env.BRANCH_TITLE }}
       - uses: actions/checkout@v4
         with:
-          ref: $DEFAULT_BRANCH
+          ref: ${{ env.DEFAULT_BRANCH }}
           token: ${{ secrets.WORKFLOW_TOKEN }}
 
       - name: Make changes to pull request
