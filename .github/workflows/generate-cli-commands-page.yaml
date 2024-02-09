@@ -28,7 +28,8 @@ jobs:
       - name: get default branch
         run: |
           echo DEFAULT_BRANCH=$(git config --get init.defaultBranch) >> $GITHUB_ENV
-          echo $DEFAULT_BRANCH
+          echo "default branch is $DEFAULT_BRANCH"
+          echo $GITHUB_ENV
       - uses: actions/checkout@v3
         with:
           ref: $DEFAULT_BRANCH
