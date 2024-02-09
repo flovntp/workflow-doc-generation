@@ -27,54 +27,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Get Default Branch
-#      - uses: actions/checkout@v3
-#        with:
-#          ref: $DEFAULT_BRANCH
-#          token: ${{ secrets.WORKFLOW_TOKEN }}
-#
-#      # Set up workflow environment to use the Platform.sh CLI
-#      - name: Set up Platform.sh CLI
-#        uses: ./.github/actions/set-up-cli
-#
-#      # Set up workflow environment to use the Upsun CLI
-#      - name: Set up Upsun CLI
-#        uses: ./.github/actions/set-up-upsun-cli
-#
-#      # Set Platform.sh CLI doc page CHECKSUM
-#      - name: Set CHECKSUM for
-#        run: echo PSH_CHECKSUM=$(shasum -a 1 ${{ env.PLATFORMSH_CLI_DOC_PATH }} | awk '{ print $1 }') >> $PSH_CHECKSUM
-#
-#      # Generate Platform.sh CLI command doc pages
-#      - env:
-#          #PLATFORMSH_CLI_TOKEN: ${{ secrets.PLATFORMSH_CLI_TOKEN }}
-#          #UPSUN_CLI_TOKEN: ${{ secrets.PLATFORMSH_CLI_TOKEN }}
-#          # @see activate_environment:Set environment title:env in manage-environment.yaml
-#          PR_TITLE: ${{ github.event.pull_request.title }}
-#        run: |
-#          # Generate Platform.sh CLI command doc pages
-#
-#          # Set current user
-#          #git config --global user.name 'CLI Command doc page auto generator'
-#          #git config --global user.email 'flovntp@gmail.com'
-#
-#          # Get most recent changes from main
-#          git checkout $DEFAULT_BRANCH
-#
-#          # Put most recent changes on the branch
-#          echo "Switching to branch ${{ env.BRANCH_TITLE }}"
-#          git switch -C ${{ env.BRANCH_TITLE }}
-#
-#          # Adding CLI Commands specific page
-#          echo "Generating Platform.sh CLI doc page"
-#          ./shared/scripts/gen-cli-docs.sh
-#          git add ${{ env.PLATFORMSH_CLI_DOC_PATH }}
-#          git commit -m "generating Platform CLI command doc page"
-#
-#          echo "Pushing most recent changes"
-#          git push --force origin ${{ env.BRANCH_TITLE }}
-#
-#          #gh pr view ${{ env.BRANCH_TITLE }}
       - uses: actions/checkout@v4
         with:
           ref: ${{ env.DEFAULT_BRANCH }}
@@ -97,12 +49,6 @@ jobs:
           ./shared/scripts/gen-cli-docs.sh ${{ env.PLATFORMSH_CLI_DOC_PATH }}
           echo "Generating Upsun CLI doc page"
           ./shared/scripts/gen-cli-docs-upsun.sh ${{ env.UPSUN_CLI_DOC_PATH }}
-
-#          git add ${{ env.PLATFORMSH_CLI_DOC_PATH }}
-#          git commit -m "generating Platform CLI command doc page"
-#
-#          echo "Pushing most recent changes"
-#          git push --force origin ${{ env.BRANCH_TITLE }}
 
       - name: Create Pull Request
         id: cpr
@@ -128,5 +74,4 @@ jobs:
             automated pr
           assignees: flovntp
           reviewers: flovntp
-          milestone: 1
           draft: false
