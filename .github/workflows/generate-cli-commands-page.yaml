@@ -75,8 +75,10 @@ jobs:
 #          git push --force origin ${{ env.BRANCH_TITLE }}
 #
 #          #gh pr view ${{ env.BRANCH_TITLE }}
-
       - uses: actions/checkout@v4
+        with:
+          ref: $DEFAULT_BRANCH
+          token: ${{ secrets.WORKFLOW_TOKEN }}
 
       - name: Make changes to pull request
         run: date +%s > report.txt
@@ -91,7 +93,7 @@ jobs:
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           signoff: false
           branch: ${{ env.BRANCH_TITLE }}
-          delete-branch: true
+          delete-branch: false
           title: '[Example] Update report'
           body: |
             Update report
@@ -102,10 +104,7 @@ jobs:
           labels: |
             report
             automated pr
-          assignees: peter-evans
-          reviewers: peter-evans
-          team-reviewers: |
-            developers
-            qa-team
+          assignees: flovntp
+          reviewers: flovntp
           milestone: 1
           draft: false
