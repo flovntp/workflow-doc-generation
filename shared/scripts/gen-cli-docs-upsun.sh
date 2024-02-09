@@ -11,3 +11,7 @@ printf "\n- [Open an issue](https://github.com/platformsh/cli/issues)\n" >> site
 printf "\n## All commands\n" >> sites/friday/src/administration/cli/reference.md
 
 upsun list --format=md | tail -n +2 >> sites/friday/src/administration/cli/reference.md
+
+git add sites/friday/src/administration/cli/reference.md
+
+git commit -m "Upsun CLI command doc page"

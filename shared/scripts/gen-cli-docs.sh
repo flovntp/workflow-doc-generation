@@ -11,3 +11,7 @@ printf "\n- [Open an issue](https://github.com/platformsh/cli/issues)\n" >> site
 printf "\n## All commands\n" >> sites/platform/src/administration/cli/reference.md
 
 platform list --format=md | tail -n +2 >> sites/platform/src/administration/cli/reference.md
+
+git add sites/platform/src/administration/cli/reference.md
+
+git commit -m "Platform.sh CLI command doc page"
