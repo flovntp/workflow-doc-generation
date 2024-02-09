@@ -27,7 +27,7 @@ jobs:
       # Get Default Branch
       - name: get default branch
         run: |
-          echo DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') >> $GITHUB_ENV
+          echo DEFAULT_BRANCH=$(git config --get init.defaultBranch) >> $GITHUB_ENV
           echo $DEFAULT_BRANCH
       - uses: actions/checkout@v3
         with:
