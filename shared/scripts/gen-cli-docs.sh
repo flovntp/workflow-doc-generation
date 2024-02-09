@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cp shared/pages/commands.md sites/platform/src/administration/cli/reference.md
+cp shared/pages/commands.md ${{ env.PLATFORMSH_CLI_DOC_PATH }}
 
 VERSION=$(platform version)
 printf "\n# $VERSION\n" >> sites/platform/src/administration/cli/reference.md
