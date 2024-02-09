@@ -117,7 +117,7 @@ jobs:
             ${{ env.PLATFORMSH_CLI_DOC_PATH }}
             ${{ env.UPSUN_CLI_DOC_PATH }}
           branch: ${{ env.BRANCH_TITLE }}
-          delete-branch: true
+          delete-branch: false
           title: '[CLI-BOT] Update on doc pages for CLI commands'
           body: |
             Some changes occurs on the CLI Commands doc page, that is automatically generated from:
