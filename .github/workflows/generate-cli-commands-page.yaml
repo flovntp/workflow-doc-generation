@@ -15,6 +15,7 @@ env:
   SLEEP_TIME: 5
   NUM_TRIES: 30
   BRANCH_TITLE: ${{ vars.BFF_PREFIX }}-cli-command-doc-page
+  DEFAULT_BRANCH: "main"
   PLATFORMSH_CLI_DOC_PATH: "sites/platform/src/administration/cli/reference.html"
   UPSUN_CLI_DOC_PATH: "sites/friday/src/administration/cli/reference.html"
 permissions:
@@ -25,11 +26,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Get Default Branch
-      - name: get default branch
-        run: |
-          echo DEFAULT_BRANCH=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5) >> $GITHUB_ENV
-          echo "default branch is $DEFAULT_BRANCH"
-          echo $GITHUB_ENV
       - uses: actions/checkout@v3
         with:
           ref: $DEFAULT_BRANCH
