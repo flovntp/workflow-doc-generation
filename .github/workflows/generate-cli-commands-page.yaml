@@ -16,7 +16,7 @@ env:
   PLATFORMSH_CLI_DEFAULT_TIMEOUT: 60 # Increase timeout for CLI commands
   SLEEP_TIME: 5
   NUM_TRIES: 30
-  BRANCH_TITLE: ${{ vars.BFF_PREFIX }}-cli-command-doc-page
+  BRANCH_TITLE: cli-commands-doc-page
   DEFAULT_BRANCH: "main"
   PLATFORMSH_CLI_DOC_PATH: "sites/platform/src/administration/cli/reference.html"
   UPSUN_CLI_DOC_PATH: "sites/friday/src/administration/cli/reference.html"
