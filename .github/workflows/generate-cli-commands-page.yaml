@@ -72,6 +72,6 @@ jobs:
           labels: |
             report
             automated pr
-          assignees: flovntp
-          reviewers: flovntp
+          #assignees: flovntp
+          #reviewers: flovntp
           draft: false
