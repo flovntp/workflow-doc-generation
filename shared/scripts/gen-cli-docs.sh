@@ -14,8 +14,14 @@ $2 list --format=md | tail -n +2 >> $1
 
 # amendments
 sed -i 's/e\.g\./for example/g' $1
-
-
+sed -i 's/ csv,/ `csv`,/g' $1
+sed -i 's/ table,/ `table`,/g' $1
+sed -i 's/ tsv,/ `tsv`,/g' $1
+sed -i 's/commit_id/`commit_id`/g' $1
+sed -i 's/expires_at/`expires_at`/g' $1
+sed -i 's/updated_at/`updated_at`/g' $1
+sed -i 's/Platform.sh/{{ vendor/name }}/g' $1
+sed -i 's/Upsun/{{ vendor/name }}/g' $1
 
 #./shared/scripts/clean-text.sh $1
 
