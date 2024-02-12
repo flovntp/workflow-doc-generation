@@ -12,4 +12,6 @@ printf "\n## All commands\n" >> $1
 
 $2 list --format=md | tail -n +2 >> $1
 
+sh clean-text.sh $1
+
 git add $1
