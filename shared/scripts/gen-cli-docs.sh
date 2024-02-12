@@ -37,12 +37,12 @@ sed -i 's/''newrelic''/`newrelic`/gI' $1
 sed -i 's/''splunk''/`splunk`/gI' $1
 sed -i 's/''sumologic''/`sumologic`/gI' $1
 sed -i 's/''syslog''/`syslog`/gI' $1
-sed -i "s/pending, in_progress, complete/`pending`, `in_progress`, `complete`/gI" $1
-sed -i "s/in_progress, pending, complete, or cancelled/`in_progress`, `pending`, `complete` or `cancelled`/gI" $1
-sed -i "s/--state=in_progress,pending/`--state=in_progress,pending`/gI" $1
-sed -i "s/(txt, json, or md)/(`txt`, `json`, or `md`)/gI" $1
-sed -i "s/Available columns: id\*, title\*, status\*, type\*, created, machine_name, updated (* = default columns)/Available columns: `id*`, `title*`, `status*`, `type*`, `created`, `machine_name`, `updated` (`*` = default columns)/gI" $1
-sed -i "s/Available columns: id\*, created\*, description\*, type\*, state\*, result\*, completed, progress, time_build, time_deploy, time_execute, time_wait (\* = default columns)/Available columns: `id*`, `created*`, `description*`, `type*`, `state*`, `result*`, `completed`, `progress`, `time_build`, `time_deploy`, `time_execute`, `time_wait` (`*` = default columns)/gI" $1
+sed -i 's/pending, in_progress, complete/`pending`, `in_progress`, `complete`/g' $1
+sed -i 's/in_progress, pending, complete, or cancelled/`in_progress`, `pending`, `complete` or `cancelled`/gI' $1
+sed -i 's/--state=in_progress,pending/`--state=in_progress,pending`/gI' $1
+sed -i 's/(txt, json, or md)/(`txt`, `json`, or `md`)/gI' $1
+sed -i 's/Available columns: id\*, title\*, status\*, type\*, created, machine_name, updated (* = default columns)/Available columns: `id*`, `title*`, `status*`, `type*`, `created`, `machine_name`, `updated` (`*` = default columns)/gI' $1
+sed -i 's/Available columns: id\*, created\*, description\*, type\*, state\*, result\*, completed, progress, time_build, time_deploy, time_execute, time_wait (\* = default columns)/Available columns: `id*`, `created*`, `description*`, `type*`, `state*`, `result*`, `completed`, `progress`, `time_build`, `time_deploy`, `time_execute`, `time_wait` (`*` = default columns)/gI' $1
 
 #./shared/scripts/clean-text.sh $1
 
