@@ -22,7 +22,7 @@ sed -i 's/Platform\.sh/{{ vendor\/name }}/g' $1
 sed -i 's/Upsun/{{ vendor\/name }}/g' $1
 sed -i "s/Do not/Don't/gI" $1
 sed -i "s/do not/don't/g" $1
-sed -i "s/''bitbucket''/`bitbucket`/gI" $1
+sed -i 's/''bitbucket''/`bitbucket`/gI' $1
 sed -i "s/\'bitbucket_server\'/`bitbucket_server`/gI" $1
 sed -i "s/'github'/`github`/gI" $1
 sed -i "s/'gitlab'/`gitlab`/gI" $1
