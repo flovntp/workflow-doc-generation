@@ -23,20 +23,20 @@ sed -i 's/Upsun/{{ vendor\/name }}/g' $1
 sed -i "s/Do not/Don't/gI" $1
 sed -i "s/do not/don't/g" $1
 sed -i 's/''bitbucket''/`bitbucket`/gI' $1
-sed -i "s/\'bitbucket_server\'/`bitbucket_server`/gI" $1
-sed -i "s/'github'/`github`/gI" $1
-sed -i "s/'gitlab'/`gitlab`/gI" $1
-sed -i "s/'webhook'/`webhook`/gI" $1
-sed -i "s/'health.email'/`health.email`/gI" $1
-sed -i "s/'health.pagerduty'/`health.pagerduty`/gI" $1
-sed -i "s/'health.slack'/`health.slack`/gI" $1
-sed -i "s/'health.webhook'/`health.webhook`/gI" $1
-sed -i "s/'httplog'/`httplog`/gI" $1
-sed -i "s/'script'/`script`/gI" $1
-sed -i "s/'newrelic'/`newrelic`/gI" $1
-sed -i "s/'splunk'/`splunk`/gI" $1
-sed -i "s/'sumologic'/`sumologic`/gI" $1
-sed -i "s/'syslog'/`syslog`/gI" $1
+sed -i 's/''bitbucket_server''/`bitbucket_server`/gI' $1
+sed -i 's/''github''/`github`/gI' $1
+sed -i 's/''gitlab''/`gitlab`/gI' $1
+sed -i 's/''webhook''/`webhook`/gI' $1
+sed -i 's/''health.email''/`health.email`/gI' $1
+sed -i 's/''health.pagerduty''/`health.pagerduty`/gI' $1
+sed -i 's/''health.slack''/`health.slack`/gI' $1
+sed -i 's/''health.webhook''/`health.webhook`/gI' $1
+sed -i 's/''httplog''/`httplog`/gI' $1
+sed -i 's/''script''/`script`/gI' $1
+sed -i 's/''newrelic''/`newrelic`/gI' $1
+sed -i 's/''splunk''/`splunk`/gI' $1
+sed -i 's/''sumologic''/`sumologic`/gI' $1
+sed -i 's/''syslog''/`syslog`/gI' $1
 sed -i "s/pending, in_progress, complete/`pending`, `in_progress`, `complete`/gI" $1
 sed -i "s/in_progress, pending, complete, or cancelled/`in_progress`, `pending`, `complete` or `cancelled`/gI" $1
 sed -i "s/--state=in_progress,pending/`--state=in_progress,pending`/gI" $1
