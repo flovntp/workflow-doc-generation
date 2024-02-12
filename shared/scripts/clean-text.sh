@@ -15,4 +15,4 @@
 #git add $1
 
 
-yq e '. | to_entries | map(.value) | .[]' shared/yaml/amendments.yaml
+yq e '. | to_entries | map(.value) | .[]' ./shared/yaml/amendments.yaml

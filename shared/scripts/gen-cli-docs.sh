@@ -12,6 +12,11 @@ printf "\n## All commands\n" >> $1
 
 $2 list --format=md | tail -n +2 >> $1
 
-./shared/scripts/clean-text.sh $1
+# amendments
+sed -i 's/e.g./for example/g' $1
+
+
+
+#./shared/scripts/clean-text.sh $1
 
 git add $1

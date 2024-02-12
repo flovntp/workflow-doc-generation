@@ -1,3 +1,6 @@
 for_example:
   __original: 'e.g.'
   __override: 'for example'
+for_example2:
+  __original: 'e.g.2'
+  __override: 'for example2'
