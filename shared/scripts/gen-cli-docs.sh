@@ -42,7 +42,7 @@ sed -i 's/in_progress, pending, complete, or cancelled/`in_progress`, `pending`,
 sed -i 's/--state=in_progress,pending/`--state=in_progress,pending`/gI' $1
 sed -i 's/(txt, json, or md)/(`txt`, `json`, or `md`)/gI' $1
 sed -i 's/Available columns: id\*, title\*, status\*, type\*, created, machine_name, updated (* = default columns)/Available columns: `id*`, `title*`, `status*`, `type*`, `created`, `machine_name`, `updated` (`*` = default columns)/gI' $1
-sed -i 's/Available columns: id\*, created\*, description\*, type\*, state\*, result\*, completed, progress, time_build, time_deploy, time_execute, time_wait (\* = default columns)/Available columns: `id*`, `created*`, `description*`, `type*`, `state*`, `result*`, `completed`, `progress`, `time_build`, `time_deploy`, `time_execute`, `time_wait` (`*` = default columns)/gI' $1
+sed -i 's/Available columns: id*, created*, description*, type*, state*, result*, completed, progress, time_build, time_deploy, time_execute, time_wait (* = default columns)/Available columns: `id*`, `created*`, `description*`, `type*`, `state*`, `result*`, `completed`, `progress`, `time_build`, `time_deploy`, `time_execute`, `time_wait` (`*` = default columns)/gI' $1
 
 #./shared/scripts/clean-text.sh $1
 
